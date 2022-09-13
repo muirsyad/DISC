@@ -29,21 +29,18 @@ class DatabaseSeeder extends Seeder
             'name'=> 'Kasim',
             'email' => 'Kasim@gmail.com',
             'no-tel' => '0172716395',
-            'password' => 'abc123'
+            'password' => 'abc123',
+            'role_id'=> '1'
         ]);
 
         User::create([
             'name'=> 'Mikarim',
             'email' => 'mikarim@gmail.com',
             'no-tel' => '0672716395',
-            'password' => 'abc123'
+            'password' => 'abc123',
+            'role_id'=> '1'
         ]);
 
-        Admin::create([
-            'name'=> 'hakim',
-            'email' => 'hakim@gmail.com',
-            'password' => 'icad4922'
-        ]);
         Group::create([
             'value' =>1
         ]);

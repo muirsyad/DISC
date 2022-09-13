@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -14,13 +16,18 @@ class UserController extends Controller
     {
         return view('Users.register');
     }
+    public function adcreate()
+    {
+        return view('Admin.register');
+    }
     public function store(Request $request)
     {
         $formFields = $request->validate([
             'name' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => 'required|confirmed|min:6',
-            'no-tel' => ['required']
+            'no-tel' => ['required'],
+            'role_id' => 'required'
         ]);
         //hash password
         $formFields['password'] = bcrypt($formFields['password']);
@@ -37,7 +44,8 @@ class UserController extends Controller
         return view('Users.login');
     }
 
-    public function adlog(){
+    public function adlog()
+    {
         return view('Admin.login');
     }
     public function auth(Request $request)
@@ -47,10 +55,30 @@ class UserController extends Controller
             'password' => 'required',
         ]);
 
+
+
+        $user = DB::table('users')->where('email', $formFields['email'])->get();
+
+
+        foreach ($user as $role) {
+            $role = $role->role_id;
+        }
+        // echo $role;
+        // dd($user);
+
+
+
+
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
+            if ($role == 2) {
 
-            return redirect('/home')->with('message', 'Logged in successfully');
+
+                return redirect('/home')->with('message', 'Logged in successfully');
+            }
+            else{
+                return redirect('/admin/index')->with('message', 'Logged in successfully');
+            }
         }
         return back()->withErrors(['email' => 'Invalid Cerendentials'])->onlyInput();
     }
@@ -62,5 +90,23 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/')->with('message', 'You have beem logout');
+    }
+
+    public function role()
+    {
+
+        $id = 1;
+        $user = DB::table('users')->where('email', 'mioo@gmail.com')->get();
+        foreach ($user as $user) {
+            $var = $user->email;
+        }
+        echo '   value' . $var;
+
+
+        dd($user);
+    }
+
+    public function dashboard(){
+        return view('Admin.index');
     }
 }

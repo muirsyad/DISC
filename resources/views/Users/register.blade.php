@@ -46,6 +46,7 @@
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
                 </div>
+                <input type="hidden" name="role_id" value="2">
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

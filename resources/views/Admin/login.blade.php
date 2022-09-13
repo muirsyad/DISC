@@ -4,9 +4,9 @@
 <div class="card">
     <div class="card-body">
 
-<p class="h3 mb-0 text-gray-800 text-center mb-3">Login</p>
+<p class="h3 mb-0 text-gray-800 text-center mb-3">Admin Login</p>
 <span>Login to the system to take the DISC personality test</span>
-<form method ="POST"action="/users/auth">
+<form method ="POST"action="/admin/auth">
     @csrf
     <div class="mb-3 mt-3">
         <label for="exampleFormControlInput1" class="form-label">Email address</label>
@@ -27,7 +27,7 @@
         @enderror
     </div>
     <div class="mb-3">
-<span>Dont have an account? </span><a href="/register">Create now</a>
+<span>Dont have an account? </span><a href="/admin/register">Create now</a>
     </div>
       <div class="mb-3">
         <button type="submit" class="btn btn-primary">Login</button>

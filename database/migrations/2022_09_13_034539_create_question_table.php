@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('group_id')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->foreign('group_id')->references('id')->on('groups')->nullOnDelete();
-            $table->foreign('created_by')->references('id')->on('admins')->nullOnDelete();
+            $table->foreign('created_by')->references('id')->on('users')->nullOnDelete();
         });
     }
 

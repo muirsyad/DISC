@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\question;
 use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,7 @@ Route::get('/question',[question::class, 'qst']);
 Route::get('/home',[QuestionController::class,'index']);
 //user routing
 Route::get('/register',[UserController::class,'create']);
+Route::get('/admin/register',[UserController::class,'adcreate']);
 Route::POST('/users',[UserController::class,'store']);
 Route::POST('/logout',[UserController::class,'logout']);
 //login views
@@ -38,4 +40,6 @@ Route::get('/',[UserController::class,'login']);
 Route::POST('/users/auth',[UserController::class,'auth']);
 
 //admin routes
-Route::get('/admin',[UserController::class,'adlog']);
+Route::get('/ts',[UserController::class,'role']);
+Route::get('/admin/index',[UserController::class,'dashboard']);
+

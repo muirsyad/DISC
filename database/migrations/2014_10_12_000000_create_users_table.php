@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('no-tel');
             $table->string('password');
+            $table->integer('role_id');
         });
     }
 
