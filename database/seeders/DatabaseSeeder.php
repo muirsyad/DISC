@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Group;
 use App\Models\Question;
 use Illuminate\Database\Seeder;
@@ -36,6 +37,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'mikarim@gmail.com',
             'no-tel' => '0672716395',
             'password' => 'abc123'
+        ]);
+
+        Admin::create([
+            'name'=> 'hakim',
+            'email' => 'hakim@gmail.com',
+            'password' => 'icad4922'
         ]);
         Group::create([
             'value' =>1
