@@ -5,7 +5,8 @@
     <div class="col-md-4 my-4">
         <div class="card">
             <div class="card-body text-center">
-                <button class="btn btn-primary">Start Test</button>
+                <a href="/questions/quiz"> <button class="btn btn-primary">Start Test</button></a>
+
             </div>
         </div>
     </div>

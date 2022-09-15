@@ -42,4 +42,10 @@ Route::POST('/users/auth',[UserController::class,'auth']);
 //admin routes
 Route::get('/ts',[UserController::class,'role']);
 Route::get('/admin/index',[UserController::class,'dashboard']);
+Route::get('/admin/createQ',[QuestionController::class,'createQ']);
+Route::post('/question/store',[QuestionController::class,'storeQ']);
+Route::get('/admin/question',[QuestionController::class,'showQ']);
+
+//question routes
+Route::get('/questions/quiz',[QuestionController::class,'test']);
 

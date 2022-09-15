@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     //
+
+
     public function create()
     {
         return view('Users.register');
@@ -109,4 +111,6 @@ class UserController extends Controller
     public function dashboard(){
         return view('Admin.index');
     }
+
+
 }
