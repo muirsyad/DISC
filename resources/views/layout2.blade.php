@@ -18,14 +18,45 @@
     <!-- Custom styles for this template-->
     <link href=" {{ asset('/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/75759bf957.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body id="page-top">
-    @if (session()->has('message'))
-                        <div x-data="{show:true}" x-init="setTimeout(() => show = false, 2500)" x-show="show" class="alert alert-success">
+
+    @if (session()->has('error'))
+        {{-- <div x-data="{show:true}" x-init="setTimeout(() => show = false, 2500)" x-show="show" class="alert alert-success">
                             {{ session()->get('message') }}
-                        </div>
-                    @endif
+                        </div> --}}
+        <input type="hidden" id="m1" value="{{ session()->get('error') }}">
+
+        <script>
+            var message = document.getElementById('m1').value;
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: message
+
+            })
+
+        </script>
+    @endif
+    @if (session()->has('message'))
+    <input type="hidden" id="m2" value="{{ session()->get('message') }}">
+
+    <script>
+        var message = document.getElementById('m2').value;
+        Swal.fire({
+            icon: 'success',
+            title: 'Sucessfully',
+            text: message
+
+        })
+
+    </script>
+    @endif
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -165,7 +196,7 @@
 
                     <!-- Topbar Search -->
 
-                        <p class="text-dark font-weight-bold">Welcome   {{ auth()->user()->name }}</p>
+                    <p class="text-dark font-weight-bold">Welcome {{ auth()->user()->name }}</p>
 
 
                     <!-- Topbar Navbar -->
@@ -206,7 +237,6 @@
                                 </form>
                             </li>
                         @else
-
                         @endauth
 
 
@@ -291,6 +321,11 @@
     <script src="https://kit.fontawesome.com/75759bf957.js" crossorigin="anonymous"></script>
     {{-- alpine js --}}
     <script src="//unpkg.com/alpinejs" defer></script>
+    {{-- xsweet alert --}}
+
+    </script>
+
+
     {{-- <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
 

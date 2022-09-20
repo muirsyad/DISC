@@ -16,6 +16,7 @@
                       </tr>
                     </thead>
                     <tbody>
+
                         @foreach ($Questions as $Question)
                         <tr>
                             <th scope="row">{{ $Question->id }}</th>
@@ -27,6 +28,7 @@
                             </td>
                           </tr>
                         @endforeach
+
                     </tbody>
                   </table>
             </div>

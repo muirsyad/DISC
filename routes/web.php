@@ -48,4 +48,5 @@ Route::get('/admin/question',[QuestionController::class,'showQ']);
 
 //question routes
 Route::get('/questions/quiz',[QuestionController::class,'test']);
+Route::post('/questions/quiz/score',[QuestionController::class,'score']);
 
