@@ -34,15 +34,15 @@
                                     @foreach ($grp as $g)
                                         <tr>
 
-                                            <th scope="row">{{ $g->question }}</th>
-                                            <th scope="row">
+                                            <td scope="row">{{ $g->question }}</td>
+                                            <td scope="row">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio"
+                                                    <input class="form-check-input radio " type="radio"
                                                         name="Q_{{ $g->group_id }}" id="Q_{{ $g->group_id }}"
                                                         value="{{ $g->disc_value }}">
 
                                                 </div>
-                                            </th>
+                                            </td>
 
                                         </tr>
                                     @endforeach

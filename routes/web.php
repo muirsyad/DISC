@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\question;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\tempcontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Models\Question as ModelsQuestion;
@@ -18,12 +20,6 @@ use App\Models\Question as ModelsQuestion;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 Route::get('/land',[question::class, 'all']);
 
 Route::get('/question',[question::class, 'qst']);
@@ -45,8 +41,14 @@ Route::get('/admin/index',[UserController::class,'dashboard']);
 Route::get('/admin/createQ',[QuestionController::class,'createQ']);
 Route::post('/question/store',[QuestionController::class,'storeQ']);
 Route::get('/admin/question',[QuestionController::class,'showQ']);
+//admin client routes
+Route::get('/admin/client',[ClientController::class,'index']);
+Route::get('/admin/client/create',[ClientController::class,'create']);
 
 //question routes
 Route::get('/questions/quiz',[QuestionController::class,'test']);
 Route::post('/questions/quiz/score',[QuestionController::class,'score']);
+
+//AJAX test
+Route::get('/ajax',[tempcontroller::class,'index']);
 

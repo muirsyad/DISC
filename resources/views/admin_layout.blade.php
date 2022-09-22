@@ -31,14 +31,15 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #095933;">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/index">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">LHI <sup>DISC test</sup></div>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center mt-3" href="/admin/index">
+                <img src="{{ asset('img/logo.png') }}" alt="" width="100" height="100"><br>
+            </a>
+            <a href="/admin/index">
+                <span class="text-white sidebar-brand d-flex align-items-center justify-content-center nav-links">
+                    DISC Test</span>
             </a>
 
             <!-- Divider -->
@@ -69,8 +70,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Option:</h6>
-                        <a class="collapse-item" href="buttons.html">View all</a>
-                        <a class="collapse-item" href="cards.html">View by client</a>
+                        <a class="collapse-item" href="/admin/client">View all</a>
+                        <a class="collapse-item" href="/">View by client</a>
                     </div>
                 </div>
             </li>
@@ -86,8 +87,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Option:</h6>
-                        <a class="collapse-item" href="/departments">View</a>
-                        <a class="collapse-item" href="/departments/create">New</a>
+                        <a class="collapse-item" href="/admin/client">View</a>
+                        <a class="collapse-item" href="/admin/client/create">New</a>
 
                     </div>
                 </div>
@@ -98,8 +99,7 @@
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Question</span>
                 </a>
-                <div id="collapse2" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapse2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Option:</h6>
                         <a class="collapse-item" href="/admin/question">View</a>
@@ -163,10 +163,7 @@
                 <div class="container">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 
-                    </div>
 
 
                     @yield('content')
