@@ -1,10 +1,9 @@
-@extends('layout2')
+@extends('quiz')
 @section('content')
 
-    <h1 class="title">Dashboard</h1>
+<h1>test</h1>
 
-
-    {{-- chart --}}
+    {{-- chart
     <div class="row justify-content-center">
         <div class="col-md-5 ">
             <div class="card mt-3">
@@ -128,5 +127,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
