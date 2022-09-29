@@ -9,7 +9,11 @@ class ClientController extends Controller
 {
     //
     public function index(){
-        return view('Admin.Clients.index',[
+        return view('Admin.Clients.index');
+    }
+
+    public function list(){
+        return view('Admin.Clients.list',[
             'Clients' => Client::All()
         ]);
     }

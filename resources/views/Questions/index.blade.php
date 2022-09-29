@@ -1,7 +1,6 @@
 @extends('quiz')
 @section('content')
-
-<h1>test</h1>
+    <h1>test</h1>
 
     {{-- chart
     <div class="row justify-content-center">
@@ -128,4 +127,31 @@
             </div>
         </div>
     </div> --}}
+
+
+    <div class="row">
+        <div class="col col-sm-6 col-md-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h1 class="text-danger text-center mb-3">Notes:</h1>
+                    <ul>
+                        <h3>
+                            <li>Please answer all provided qustion.</li>
+                        </h3>
+                        <h3>
+                            <li>Dont refresh the page until complete the quiz.</li>
+                        </h3>
+                        <h3>
+                            <li>Good luck.</li>
+                        </h3>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="/questions/quiz" class="btn btn-primary text-center"> <h3>Begin quiz</h3></a>
+
+            </div>
+        </div>
+
+    </div>
 @endsection

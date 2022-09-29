@@ -3,9 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Role;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Group;
+use App\Models\Client;
 use App\Models\Question;
 use Illuminate\Database\Seeder;
 
@@ -24,95 +26,60 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        Role::create([
+            'role'=>'Admin',
+        ]);
 
+        Role::create([
+            'role'=>'client',
+        ]);
+        Client::create([
+            'name'=>'LHI',
+        ]);
+        Client::create([
+            'name'=>'Bermuda sdn bhd',
+        ]);
         User::create([
             'name'=> 'Kasim',
             'email' => 'Kasim@gmail.com',
-            'no-tel' => '0172716395',
-            'password' => 'abc123',
+            'password' => 'icad4922',
+            'client_id'=> '1',
             'role_id'=> '1'
         ]);
 
         User::create([
-            'name'=> 'Mikarim',
-            'email' => 'mikarim@gmail.com',
-            'no-tel' => '0672716395',
-            'password' => 'abc123',
-            'role_id'=> '1'
+            'name'=> 'monah',
+            'email' => 'mimi@gmail.com',
+            'password' => 'icad4922',
+            'client_id'=> '2',
+            'role_id'=> '2'
         ]);
 
         Group::create([
-            'value' =>1
+            'group' =>1
         ]);
         Group::create([
-            'value' =>2
+            'group' =>2
         ]);
         Group::create([
-            'value' =>3
+            'group' =>3
         ]);
         Group::create([
-            'value' =>4
+            'group' =>4
         ]);
         Group::create([
-            'value' =>5
+            'group' =>5
         ]);
         Group::create([
-            'value' =>6
+            'group' =>6
         ]);
         Group::create([
-            'value' =>7
+            'group' =>7
         ]);
         Group::create([
-            'value' =>8
+            'group' =>8
         ]);
-        Group::create([
-            'value' =>9
-        ]);
-        Group::create([
-            'value' =>10
-        ]);
-        Group::create([
-            'value' =>11
-        ]);
-        Group::create([
-            'value' =>12
-        ]);
-        Group::create([
-            'value' =>13
-        ]);
-        Group::create([
-            'value' =>14
-        ]);
-        Group::create([
-            'value' =>15
-        ]);
-        Group::create([
-            'value' =>16
-        ]);
-        Group::create([
-            'value' =>17
-        ]);
-        Group::create([
-            'value' =>18
-        ]);
-        Group::create([
-            'value' =>19
-        ]);
-        Group::create([
-            'value' =>20
-        ]);
-        Group::create([
-            'value' =>21
-        ]);
-        Group::create([
-            'value' =>22
-        ]);
-        Group::create([
-            'value' =>23
-        ]);
-        Group::create([
-            'value' =>24
-        ]);
+
         Question::create([
             'question' => 'Must be able to follow through',
             'disc_value' => 'S',

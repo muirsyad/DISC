@@ -13,9 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('groups', function (Blueprint $table) {
+        Schema::create('answer_records', function (Blueprint $table) {
             $table->id();
-            $table->string('value');
+            $table->unsignedBigInteger('user_id');
+            $table->string('answer');
+            $table->integer('D');
+            $table->integer('I');
+            $table->integer('S');
+            $table->integer('C');
+
+            $table->foreign('user_id')->references('id')->on('users');
+
         });
     }
 
@@ -26,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group');
+        Schema::dropIfExists('answer_records');
     }
 };

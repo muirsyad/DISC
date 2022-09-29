@@ -61,7 +61,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
@@ -74,16 +74,15 @@
                         <a class="collapse-item" href="/">View by client</a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/admin/client" >
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Cliet</span>
+                    <span>Client</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                {{-- <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Option:</h6>
@@ -91,22 +90,35 @@
                         <a class="collapse-item" href="/admin/client/create">New</a>
 
                     </div>
-                </div>
+                </div> --}}
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse2"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="/admin/question/index" >
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Question</span>
                 </a>
-                <div id="collapse2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                {{-- <div id="collapse2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Option:</h6>
                         <a class="collapse-item" href="/admin/question">View</a>
                         <a class="collapse-item" href="/admin/createQ">New</a>
 
                     </div>
-                </div>
+                </div> --}}
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" >
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Profile</span>
+                </a>
+                {{-- <div id="collapse2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Option:</h6>
+                        <a class="collapse-item" href="/admin/question">View</a>
+                        <a class="collapse-item" href="/admin/createQ">New</a>
+
+                    </div>
+                </div> --}}
             </li>
 
             <!-- Divider -->

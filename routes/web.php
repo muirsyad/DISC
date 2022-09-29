@@ -38,16 +38,19 @@ Route::POST('/users/auth',[UserController::class,'auth']);
 //admin routes
 Route::get('/ts',[UserController::class,'role']);
 Route::get('/admin/index',[UserController::class,'dashboard']);
+Route::get('/admin/question/index',[QuestionController::class,'option']);
 Route::get('/admin/createQ',[QuestionController::class,'createQ']);
 Route::post('/question/store',[QuestionController::class,'storeQ']);
 Route::get('/admin/question',[QuestionController::class,'showQ']);
 //admin client routes
 Route::get('/admin/client',[ClientController::class,'index']);
+Route::get('/admin/client/list',[ClientController::class,'list']);
 Route::get('/admin/client/create',[ClientController::class,'create']);
 
 //question routes
 Route::get('/questions/quiz',[QuestionController::class,'test']);
 Route::post('/questions/quiz/score',[QuestionController::class,'score']);
+Route::get('/questions/results',[QuestionController::class,'results']);
 
 //AJAX test
 Route::get('/ajax',[tempcontroller::class,'index']);

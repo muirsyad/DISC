@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('content')
-<h1>Clients</h1>
+<h1>Question</h1> <br>
     <div class="row justify-content-center">
 
         <div class="col-xl-3 col-md-6 mb-4">
@@ -11,7 +11,7 @@
 
                     {{-- <div class="text-xl font-weight-bold text-primary text-center text-uppercase mb-1">
                             View</div> --}}
-                    <a href="/admin/client/list">
+                    <a href="/admin/question">
                         <h1
                             class="text-xl font-weight-bold text-primary text-center text-uppercase mb-1 ">
                             View</h1>
@@ -31,7 +31,7 @@
 
                     {{-- <div class="text-xl font-weight-bold text-primary text-center text-uppercase mb-1">
                             View</div> --}}
-                            <a href="/admin/client/create"><h1 class="text-xl font-weight-bold text-primary text-center text-uppercase mb-1">Create</h1></a>
+                            <a href="/admin/createQ"><h1 class="text-xl font-weight-bold text-primary text-center text-uppercase mb-1">Create</h1></a>
 
 
 

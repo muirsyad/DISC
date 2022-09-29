@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('question');
             $table->string('disc_value');
-            $table->unsignedBigInteger('group_id')->nullable();
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->foreign('group_id')->references('id')->on('groups')->nullOnDelete();
-            $table->foreign('created_by')->references('id')->on('users')->nullOnDelete();
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('group_id');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('group_id')->references('id')->on('groups');
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question');
+        Schema::dropIfExists('questions');
     }
 };

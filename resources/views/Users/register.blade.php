@@ -37,7 +37,7 @@
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
                 </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">No-tel</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1"
                         placeholder="example: 01782726353" name="no-tel">
@@ -45,7 +45,8 @@
                         @error('no-tel')
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
-                </div>
+                </div> --}}
+                <input type="hidden" name="client_id" value="2">
                 <input type="hidden" name="role_id" value="2">
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
